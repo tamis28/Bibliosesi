@@ -8,7 +8,6 @@ menuBtn.addEventListener('click', () => {
   } else {
     document.querySelector('main').style.filter = "grayscale(0) blur(0)";
   }
-
 });
 
 function salvarLocal() {
@@ -71,6 +70,49 @@ function buscarLivros() {
   }
 }
 
+function login() {
+  fetch("http://localhost:3000/usuarios/login", {
+    method: "POST",
+    headers: {"Content-Type":"application/json"},
+    body: JSON.stringify({email: "", senha: ""})
+  }).
+  then(resp => {
+    return resp.json();
+  })
+  .then(data => {
+    localStorage.setItem("dados", decodeJWT(data.token));
+  })
+  .catch(err => {console.log(err)})
+}
 
+function decodeJWT(token) {
+  // 1. Split the token into Header, Payload, and Signature
+  const parts = token.split('.');
+  if (parts.length !== 3) {
+    throw new Error('Invalid JWT token');
+  }
 
+  // 2. Base64URL decode the payload (the second part)
+  const base64Url = parts[1];
+  const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+  const jsonPayload = decodeURIComponent(window.atob(base64).split('').map(function(c) {
+      return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+  }).join(''));
 
+  // 3. Parse the JSON back into an object
+  //return JSON.parse(jsonPayload);
+  return jsonPayload;
+}
+
+function autorizaCadastro() {
+  const dados = JSON.parse(localStorage.getItem("dados"));
+
+  if(dados.tipo == "ADM") {
+    const container = document.querySelector(".container-wrapper");
+
+    const cadastrar = document.createElement("button");
+    cadastrar.innerHTML = "Cadastrar Livro";
+    
+    container.appendChild(cadastrar);
+  }
+}

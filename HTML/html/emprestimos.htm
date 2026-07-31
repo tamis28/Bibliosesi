@@ -42,32 +42,47 @@
     </div>
 
     <main>
-        <div class="emp-info">
-            <div class="livro-info">
-                <h2>Crepúsculo</h2>
-                <h3 style="margin-left: 10px;">Descrição</h3>
-                <p style="margin-left: 10px;">Bella swan se muda para uma nova cidade e se apaixona por edward cullen, um misterioso colega de classe que é, na verdade, um vampiro, dando início a um romance intenso e perigoso entre mundos distintos.</p>
+        <div class="emprestimo-grid">
+            <div class="emp-lista">
+                <div class="emp-lista-grid">
+                    <div class="emp-livro">
+                        <div class="emp-livro-img">
+                            <img src="" alt="">
+                        </div>
+                        <div class="emp-livro-info">
+                            <h5>O Pequeno Príncipe</h5>
+                            <p>Antoine de Saint-Exupéry</p>
+                            <span>Em posse</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            <div class="livro-img">
-                <img src="../img/crep.jpg" width="50%" height="50%" style="border-radius: 2px; box-shadow: 0px 0px 3px #000;">
+            <div class="emp-detalhes">
+                <div class="det-text">Clique em um livro para ver detalhes</div>
             </div>
-        </div>
+            <div class="det-infos">
+                <div class="det-up">
+                    <div class="det-img">
+                        <img src="" alt="">
+                    </div>
+                    <div class="det-desc">
+                        <h3></h3>
+                        <p></p>
+                    </div>
+                </div>
+                <div class="det-down">
+                    <div class="det-left">
+                        <h3>Avalie o livro</h3>
+                        
+                    </div>
+                    <div class="det-right">
 
-        <div class="emp-coment">
-            <p>Período do Empréstimo: <span style="color: #7c7c7c;">18/04/2025 até 18/05/2025</span></p>
-            <textarea minlength="10" id="coment" maxlength="400" placeholder="Escreva seu comentário sobre o livro!"></textarea>
-            <button onclick="abrirModal()">Enviar</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
-    <div id="modalComent" class="modal">
-        <form id="comentario" class="modal-content">
-            <h2>Comentario Enviado  com Sucesso!</h2>
-            <div class="modal-buttons">
-                <button type="reset" onclick="fecharModal()">Voltar</button>
-            </div>
-        </form>
-    </div>
+    
 </body>
 <script src="../script.js"></script>
 </html>
