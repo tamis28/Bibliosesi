@@ -10,6 +10,236 @@
     <link href="https://fonts.googleapis.com/css2?family=Borel&family=DM+Serif+Text:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Sora:wght@100..800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lexend:wght@100..900&display=swap" rel="stylesheet">
     <link rel="icon" href="../img/logo.png">
+
+    <style>
+        body{
+            font-family: inter;
+        }
+        main{
+            margin-top: 4rem;
+        }
+        .emprestimo-grid{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            justify-items: center;
+        }
+        .emp-lista{
+            background: #dddddd;
+            border-radius: 10px;
+            width: 70%;
+            padding: 20px;
+            height: 450px;
+        }
+        .emp-lista-grid{
+            display: grid;
+            height: 90%;
+            overflow-y: auto;
+            align-items: center;
+        }
+        .emp-livro{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            border-radius: 10px;
+            background-color: #fff;
+            height: 150px;
+            justify-items: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        .emp-livro-img img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        /* Container dos detalhes */
+.emp-detalhes,
+.det-infos{
+    width: 100%;
+    height: 100%;
+}
+
+/* Mensagem inicial */
+.emp-detalhes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f4f4f4;
+    border-radius: 20px;
+}
+
+.det-text{
+    font-size: 1.2rem;
+    color: #777;
+    font-weight: 500;
+}
+
+/* Escondido inicialmente */
+.det-infos{
+    display: none; /* depois o JS muda para flex */
+    flex-direction: column;
+    gap: 25px;
+    padding: 25px;
+    background: #f4f4f4;
+    border-radius: 25px;
+}
+
+/* =================== */
+/* Parte superior */
+/* =================== */
+
+.det-up{
+    display: flex;
+    gap: 25px;
+    align-items: flex-start;
+}
+
+.det-img{
+    width: 180px;
+    flex-shrink: 0;
+}
+
+.det-img img{
+    width: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.det-desc{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.det-desc h3{
+    font-size: 2rem;
+    font-weight: 700;
+    color: #222;
+}
+
+.det-desc p{
+    color: #8b8b8b;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+/* =================== */
+/* Parte inferior */
+/* =================== */
+
+.det-down{
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+/* Coluna esquerda */
+
+.det-left{
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+}
+
+.det-left h3{
+    margin-bottom: 8px;
+}
+
+.stars{
+    display: flex;
+    gap: 5px;
+    color: #ffbf00;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.det-left span{
+    color: #888;
+    margin-bottom: 8px;
+}
+
+.det-left textarea{
+    height: 120px;
+    resize: none;
+    border: 2px solid #8d0000;
+    border-radius: 12px;
+    padding: 12px;
+    font-size: 1rem;
+    outline: none;
+    margin-bottom: 18px;
+}
+
+.det-left button{
+    width: 150px;
+    height: 45px;
+    border: none;
+    border-radius: 12px;
+    background: #8d0000;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.det-left button:hover{
+    background: #6e0000;
+}
+
+/* Coluna direita */
+
+.det-right{
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.livro-tags{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.livro-tags p{
+    background: #8d0000;
+    color: white;
+    padding: 8px 18px;
+    border-radius: 30px;
+    font-weight: 600;
+}
+
+.det-right span{
+    background: #dff0d3;
+    color: #222;
+    padding: 10px 40px;
+    border-radius: 30px;
+    font-size: 1.4rem;
+}
+
+.det-right button{
+    border: 2px solid #8d0000;
+    background: white;
+    color: #222;
+    border-radius: 30px;
+    padding: 12px 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.det-right button:hover{
+    background: #8d0000;
+    color: white;
+}
+
+.det-right button i{
+    margin-left: 10px;
+}
+    </style>
 </head>
 <body>
     <header>
@@ -47,7 +277,7 @@
                 <div class="emp-lista-grid">
                     <div class="emp-livro">
                         <div class="emp-livro-img">
-                            <img src="" alt="">
+                            <img src="https://m.media-amazon.com/images/I/61NHEYzP6kL._AC_UF1000,1000_QL80_.jpg" alt="">
                         </div>
                         <div class="emp-livro-info">
                             <h5>O Pequeno Príncipe</h5>
@@ -73,10 +303,25 @@
                 <div class="det-down">
                     <div class="det-left">
                         <h3>Avalie o livro</h3>
-                        
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </div>
+                        <span>Digite um comentário</span>
+                        <textarea name="comentario" id="comentario"></textarea>
+                        <button>Enviar</button>
                     </div>
                     <div class="det-right">
-
+                        <div class="livro-tags">
+                            <p>Fábula</p>
+                            <p>Literatura Juvenil</p>
+                            <p>Novela</p>
+                        </div>
+                        <span>Em posse</span>
+                        <button>Marcar como entregue <i class="fa-solid fa-check"></i></button>
                     </div>
                 </div>
             </div>
@@ -85,4 +330,5 @@
     
 </body>
 <script src="../script.js"></script>
+<script src="../emp.js"></script>
 </html>
