@@ -232,7 +232,7 @@ section#not h2{
 
 /*---------------- PÁGINA EMPRÉSTIMO -------------------*/
 /* INFO --------------*/
-.emp-info{
+/* .emp-info{
     padding: 10px 20px 10px;
     margin-top: 4.5rem;
     margin-bottom: 10px;
@@ -255,10 +255,10 @@ section#not h2{
 .emp-info .livro-img{
     width: 40%;
     text-align: center;
-}
+} */
 
 /* COMENTÁRIO --------------*/
-.emp-coment{
+/* .emp-coment{
     padding: 10px 20px 10px;
     text-align: center;
     display: flex;
@@ -285,9 +285,9 @@ section#not h2{
 }
 .emp-coment textarea:focus-within{
     outline: none;
-}
+} */
 /* BOTÃO --------------*/
-.emp-coment button{
+/* .emp-coment button{
     padding: 6px 30px;
     font-family: lexend;
     border: 1px solid var(--c-escuro); border-radius: 10px;
@@ -334,4 +334,4 @@ section#not h2{
     border: 1px solid var(--c-escuro); border-radius: 10px;
     background: transparent;
     margin-top: 10px;
-}
+} */
