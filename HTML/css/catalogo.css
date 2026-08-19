@@ -250,3 +250,55 @@ select option:hover{
     object-fit: cover;
     border-radius: 8px;
 }
+
+#btCadastra {
+    display: none;
+}
+
+
+
+/* =============== MODAL ===============*/
+.modal-cadastro, .livroDetalhes{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    background-color: #4e09096f;
+}
+.formLivro{
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 500px;
+}
+.formLivro input{
+    padding: 6px;
+    border: none; border-radius: 6px;
+    outline: 2px solid #682424;
+    font-family: inter;
+}
+.formLivro input::placeholder{
+    font-family: inter;
+}
+.form-buttons{
+    display: flex;
+    justify-content: space-around;
+}
+.form-buttons button{
+    padding: 6px 20px;
+    border-radius: 10px;
+    border: none;
+    background: #f5eeee;
+    font-weight: 600;
+    font-family: inter;
+}
+.form-buttons button:hover{
+    background: #e0dcdc;
+}
