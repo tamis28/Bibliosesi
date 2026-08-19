@@ -12,7 +12,6 @@ model Usuarios {
   email         String        @unique
   rm            Int           @unique
   senha         String
-  serie_escolar String
   funcao        Funcao
   emprestimos   Emprestimos[]
   fila          Fila[]
