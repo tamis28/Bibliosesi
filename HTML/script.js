@@ -42,19 +42,6 @@ function limparCampos() {
 //-----------------FILTRAR LIVROS NO CATÁLOGO
 
 
-/*function listarCatalogo() {
-  fetch("https://viacep.com.br/ws/01001000/json/")
-  .then(data => {
-    return data.json();
-  })
-  .then(resp => {
-    resp.forEach(livro => {
-      
-    });
-  });
-}
-
-listarCatalogo();*/
 
 //-----------------SEARCH INPUT
 function buscarLivros() {
