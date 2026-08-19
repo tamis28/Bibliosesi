@@ -3,7 +3,7 @@ const prisma = require("../data/prisma");
 const cadastrar = async (req, res) => {
     const data = req.body;
 
-    const item = await prisma.usuarios.create({
+    const item = await prisma.sesi.create({
         data
     });
 
@@ -11,7 +11,7 @@ const cadastrar = async (req, res) => {
 };
 
 const listar = async (req, res) => {
-    const lista = await prisma.usuarios.findMany();
+    const lista = await prisma.sesi.findMany();
 
     res.json(lista).status(200).end();
 };
@@ -19,7 +19,7 @@ const listar = async (req, res) => {
 const buscar = async (req, res) => {
     const { id } = req.params;
     
-    const item = await prisma.usuarios.findUnique({
+    const item = await prisma.sesi.findUnique({
         where: { id : Number(id) }
     });
 
@@ -30,7 +30,7 @@ const atualizar = async (req, res) => {
     const { id } = req.params;
     const dados = req.body;
     
-    const item = await prisma.usuarios.update({
+    const item = await prisma.sesi.update({
         where: { id : Number(id) },
         data: dados
     });
@@ -41,7 +41,7 @@ const atualizar = async (req, res) => {
 const excluir = async (req, res) => {
     const { id } = req.params;
     
-    const item = await prisma.usuarios.delete({
+    const item = await prisma.sesi.delete({
         where: { id : Number(id) }
     });
 

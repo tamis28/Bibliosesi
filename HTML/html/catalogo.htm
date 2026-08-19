@@ -79,8 +79,7 @@
                         <option value="op11">Terror</option>
                     </select>
                 </div>
-
-
+                <button onClick="cadastrar()" id="btCadastra">Cadastrar Teste</button>
             </div>
             
 
@@ -183,12 +182,45 @@
             </div>
 
             <!----------------------------------------->
-            <div class="modal-livros">
-                
+            <div class="livroDetalhes">
+                <div class="modal-livros">
+                    <img src="" alt="" id="capa">
+                    <h2 id="titulo"></h2>
+                    <p id="descricao"></p>
+                    <p id="autor"></p>
+                    <p id="data_lancamento"></p>
+                    <div class="generos">
+                        <p id="genero"></p>
+                    </div>
+                    <span id="status"></span>
+                    <div class="acoes">
+                        <button id="bt-fav"><i class="fa-solid fa-heart"></i></button>
+                        <button id="bt-emp">Emprestar</button>
+                    </div>
+                </div>
+            </div>
+            
+
+            <div class="modal-cadastro">
+                <form action="" id="formLivro" class="formLivro">
+                    <h2>Cadastre um livro!</h2>
+                    <input type="text" id="titulo" placeholder="Título">
+                    <input type="text" id="descricao" placeholder="Sinopse">
+                    <input type="text" id="autor" placeholder="Autor">
+                    <input type="text" id="publicacao" placeholder="Data de publicação">
+                    <input type="text" id="genero" placeholder="Gêneros (separados por vírgula)">
+                    <input type="text" id="editora" placeholder="Editora do livro">
+                    <input type="number" id="quantidade" placeholder="Quantidade disponível">
+                    <input type="url" id="imagem" placeholder="Foto da capa">
+                    <div class="form-buttons">
+                        <button>Cadastrar</button>
+                        <button>Cancelar</button>
+                    </div>
+                </form>
             </div>
         </div>
     </main>
 </body>
 <script src="../script.js"></script>
-
+<script src="../catalogo.js"></script>
 </html>

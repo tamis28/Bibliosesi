@@ -3,8 +3,6 @@ const prisma = require("../data/prisma");
 const cadastrar = async (req, res) => {
     const data = req.body;
 
-    console.log(data);
-
     const item = await prisma.livros.create({
         data
     });

@@ -85,34 +85,34 @@ function login() {
   .catch(err => {console.log(err)})
 }
 
-function decodeJWT(token) {
-  // 1. Split the token into Header, Payload, and Signature
-  const parts = token.split('.');
-  if (parts.length !== 3) {
-    throw new Error('Invalid JWT token');
-  }
+// function decodeJWT(token) {
+//   // 1. Split the token into Header, Payload, and Signature
+//   const parts = token.split('.');
+//   if (parts.length !== 3) {
+//     throw new Error('Invalid JWT token');
+//   }
 
-  // 2. Base64URL decode the payload (the second part)
-  const base64Url = parts[1];
-  const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-  const jsonPayload = decodeURIComponent(window.atob(base64).split('').map(function(c) {
-      return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-  }).join(''));
+//   // 2. Base64URL decode the payload (the second part)
+//   const base64Url = parts[1];
+//   const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+//   const jsonPayload = decodeURIComponent(window.atob(base64).split('').map(function(c) {
+//       return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+//   }).join(''));
 
-  // 3. Parse the JSON back into an object
-  //return JSON.parse(jsonPayload);
-  return jsonPayload;
-}
+//   // 3. Parse the JSON back into an object
+//   //return JSON.parse(jsonPayload);
+//   return jsonPayload;
+// }
 
-function autorizaCadastro() {
-  const dados = JSON.parse(localStorage.getItem("dados"));
+// function autorizaCadastro() {
+//   const dados = JSON.parse(localStorage.getItem("dados"));
 
-  if(dados.tipo == "ADM") {
-    const container = document.querySelector(".container-wrapper");
+//   if(dados.tipo == "ADM") {
+//     const container = document.querySelector(".container-wrapper");
 
-    const cadastrar = document.createElement("button");
-    cadastrar.innerHTML = "Cadastrar Livro";
+//     const cadastrar = document.createElement("button");
+//     cadastrar.innerHTML = "Cadastrar Livro";
     
-    container.appendChild(cadastrar);
-  }
-}
+//     container.appendChild(cadastrar);
+//   }
+// }

@@ -22,10 +22,12 @@ model Usuarios {
 model Livros {
   id          Int           @id @default(autoincrement())
   titulo      String
+  descricao   String
   autor       String
   genero      String
-  publicacao  DateTime
-  quantidade  Int
+  publicacao  String
+  editora     String
+  imagem      String
   emprestimos Emprestimos[]
   fila        Fila[]
   feedbacks   Feedbacks[]
@@ -67,6 +69,14 @@ model Noticias {
   conteudo  String
   categoria String
   data      DateTime
+}
+
+model Sesi {
+  id      Int    @id @default(autoincrement())
+  nome    String
+  unidade Int
+  email   String
+  cep     String
 }
 
 enum PosicaoFila {
