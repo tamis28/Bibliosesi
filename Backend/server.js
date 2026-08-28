@@ -35,7 +35,11 @@ app.use('/livros', livrosRoutes);
 const usuariosRoutes = require('./src/routes/usuarios.routes');
 app.use('/usuarios', usuariosRoutes);
 
+app.use("/", (req, res) => {
+    res.status(200).json({ message: "API funcionando!" });
+});
 
-app.listen(process.env.PORT_APP, () => {
-    console.log("Online na porta " + process.env.PORT_APP);
+
+app.listen(process.env.PORT, () => {
+    console.log("Online na porta " + process.env.PORT);
 })
