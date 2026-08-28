@@ -38,7 +38,11 @@ app.use('/usuarios', usuariosRoutes);
 const authRoutes = require('./src/middleware/auth');
 app.use('/auth', authRoutes)
 
+app.use("/", (req, res) => {
+    res.status(200).json({ message: "API funcionando!" });
+});
 
-app.listen(process.env.PORT_APP, () => {
-    console.log("Online na porta " + process.env.PORT_APP);
+
+app.listen(process.env.PORT, () => {
+    console.log("Online na porta " + process.env.PORT);
 })
