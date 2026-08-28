@@ -35,6 +35,9 @@ app.use('/livros', livrosRoutes);
 const usuariosRoutes = require('./src/routes/usuarios.routes');
 app.use('/usuarios', usuariosRoutes);
 
+const authRoutes = require('./src/middleware/auth');
+app.use('/auth', authRoutes)
+
 
 app.listen(process.env.PORT_APP, () => {
     console.log("Online na porta " + process.env.PORT_APP);

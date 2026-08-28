@@ -1,7 +1,10 @@
 const prisma = require("../data/prisma");
+const bcrypt = require('bcrypt');
 
 const cadastrar = async (req, res) => {
     const data = req.body;
+
+    data.senha = await bcrypt.hash(data.senha, 10);
 
     const item = await prisma.usuarios.create({
         data

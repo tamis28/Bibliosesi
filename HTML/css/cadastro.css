@@ -51,25 +51,25 @@ form input{
 form input:focus-within{
     outline: 2px solid #902222;
 }
-input#email::placeholder{
-    padding-left: 40px;
+form input:focus-within::placeholder{
     transition: opacity 400ms;
 }
-input#email:focus-within::placeholder{
+input:focus-within::placeholder{
     opacity: 0;
 }
 form label{
     margin-bottom: 5px;
     font-size: 14px;
 }
-form input#email{
-    margin-bottom: 0;
+.mail{
+    display: flex;
+    flex-direction: column;
 }
 form .mail .inp{
     background-color: #f4f2f1;
     border-radius: 4px;
 }
-.cadastro .botao{
+.cadastro .button{
     display: flex;
     justify-content: center;
     margin-top: 30px;
@@ -95,9 +95,6 @@ form .mail .inp{
 .mail .inp #pl{
     font-size: 14px;
     padding-right: 20px;
-}
-.mail{
-    margin-bottom: 20px;
 }
 form .mail label{
     margin-bottom: 5px;

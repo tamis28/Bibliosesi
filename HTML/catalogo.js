@@ -1,30 +1,13 @@
-function decodeJWT(token) {
-    if (!token) return null;
-
-    // 1. Split the token into Header, Payload, and Signature
-    const parts = token.split('.');
-    if (parts.length !== 3) return null;
-
-    // 2. Format the Base64URL string to standard Base64
-    const base64Url = parts[1];
-    const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-
-    // 3. Decode Base64 string to a JSON string, then parse it into an object
-    const jsonPayload = decodeURIComponent(
-        window.atob(base64)
-            .split('')
-            .map(c => '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2))
-            .join('')
-    );
-
-    return JSON.parse(jsonPayload);
-}
-
-let userData = decodeJWT(localStorage.getItem("token"));
+const dados = JSON.parse(localStorage.getItem("dados"));
 
 
+//----------------------------------------------------------//
+
+
+let btCadastrar = document.querySelector("#btCadastra");
 const modal = document.querySelector('.modal-cadastro')
 const form = document.getElementById('formLivro')
+
 
 function cadastrar() {
     modal.style.display = "flex"
@@ -33,17 +16,52 @@ function cancelar(){
     modal.style.display = "none"
 }
 
-
-let btCadastrar = document.querySelector("#btCadastra");
-
-console.log(btCadastrar);
-
-if(userData.funcao == "ADM") {
+if (dados.funcao === "administrador") {
     btCadastrar.style.display = "flex";
 }
 
-function listarLivros () {
-    let modelo = document.getElementById("modelo").cloneNode(true);
+
+
+
+
+// function listarLivros () {
+//     let modelo = document.getElementById("modelo").cloneNode(true);
 
     
-}
+// }
+
+const url = "http://192.168.0.155:3000/livros/";
+
+document.querySelector('#formLivro').addEventListener('submit', function(e){
+    e.preventDefault();
+    const novoLivro = {
+        titulo: titulo.value,
+        descricao: descricao.value,
+        autor: autor.value,
+        publicacao: publicacao.value,
+        genero: genero.value,
+        editora: editora.value,
+        imagem: imagem.value
+    }; 
+    
+    console.log(novoLivro);
+
+    fetch(url + 'cadastrar', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(novoLivro)
+    })
+    .then(res => {
+        if (!res.ok) {
+            throw new Error('Erro na API');
+        }
+    })
+    .then(() => {
+        alert("Livro cadastrado com sucesso.");
+        carregarLivros();
+    })
+    .catch(() => alert("Erro ao cadastrar livro"));
+})
+

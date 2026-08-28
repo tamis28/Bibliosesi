@@ -57,20 +57,7 @@ function buscarLivros() {
   }
 }
 
-function login() {
-  fetch("http://localhost:3000/usuarios/login", {
-    method: "POST",
-    headers: {"Content-Type":"application/json"},
-    body: JSON.stringify({email: "", senha: ""})
-  }).
-  then(resp => {
-    return resp.json();
-  })
-  .then(data => {
-    localStorage.setItem("dados", decodeJWT(data.token));
-  })
-  .catch(err => {console.log(err)})
-}
+
 
 // function decodeJWT(token) {
 //   // 1. Split the token into Header, Payload, and Signature
