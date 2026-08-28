@@ -22,9 +22,17 @@ function decodeJWT(token) {
 
 let userData = decodeJWT(localStorage.getItem("token"));
 
+
+const modal = document.querySelector('.modal-cadastro')
+const form = document.getElementById('formLivro')
+
 function cadastrar() {
-    console.log("teste");
+    modal.style.display = "flex"
 }
+function cancelar(){
+    modal.style.display = "none"
+}
+
 
 let btCadastrar = document.querySelector("#btCadastra");
 
@@ -32,4 +40,10 @@ console.log(btCadastrar);
 
 if(userData.funcao == "ADM") {
     btCadastrar.style.display = "flex";
+}
+
+function listarLivros () {
+    let modelo = document.getElementById("modelo").cloneNode(true);
+
+    
 }

@@ -253,6 +253,13 @@ select option:hover{
 
 #btCadastra {
     display: none;
+    background-color: #7c2e2e;
+    padding: 6px 10px;
+    gap: 10px;
+    border: none; border-radius: 20px;
+    color: #fff;
+    font-family: inter;
+    font-weight: 600;
 }
 
 
