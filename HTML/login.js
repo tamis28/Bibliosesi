@@ -43,10 +43,10 @@ document.getElementById("bt-cadastrar").addEventListener("click", (event) => {
             }
         })
         .then(() => {
-            alert("Aluno adicionado com sucesso.");
+            alert("Cadastro realizado.");
+            window.location.href = "login.htm";
         })
         .catch(() => alert("Erro ao cadastrar"));
-    alert("Cadastro realizado!");
 });
 
 
@@ -93,5 +93,3 @@ function login() {
         alert(err.message);
     });
 }
-
-

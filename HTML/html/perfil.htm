@@ -6,9 +6,11 @@
     <title>Perfil</title>
     <link rel="stylesheet" href="../css/perfil.css">
     <link rel="stylesheet" href="../css/responsivos.css">
+    <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Borel&family=DM+Serif+Text:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Sora:wght@100..800&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend:wght@100..900&family=Sora:wght@100..800&display=swap" rel="stylesheet">
+    
     <link rel="icon" href="../img/logo.png">
 </head>
 <body>
@@ -35,7 +37,7 @@
                     <i class="fa-solid fa-book"></i><li><a href="catalogo.htm">Catálogo</li></a>
                 </div>
                 <div class="bt-sair">
-                    <button><a href="index.htm">Sair <i class="fa-solid fa-right-to-bracket"></i></a></button>
+                    <button onclick="logoff()">Sair <i class="fa-solid fa-right-to-bracket"></i></button>
                 </div>
             </ul>
         </nav>
@@ -49,10 +51,9 @@
                     <button onclick="mudarFoto()"><i class="fa-solid fa-pen"></i>Editar foto</button>
                 </div>
                 <div class="right">
-                    <h3>Gabriela Caroline da Silva</h3>
-                    <p>3°A EM</p>
-                    <p>1234</p>
-                    <p>email.email@portalsesisp.org.br</p>
+                    <h3 id="nome">Gabriela Caroline da Silva</h3>
+                    <p id="rm">1234</p>
+                    <p id="email">email.email@portalsesisp.org.br</p>
                 </div>
             </div>
             <span class="divisor"></span>

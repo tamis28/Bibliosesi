@@ -43,6 +43,6 @@ app.use("/", (req, res) => {
 });
 
 
-app.listen(process.env.PORT, () => {
-    console.log("Online na porta " + process.env.PORT);
+app.listen(process.env.PORT_APP, () => {
+    console.log("Online na porta " + process.env.PORT_APP);
 })

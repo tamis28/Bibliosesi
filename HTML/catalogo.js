@@ -24,13 +24,9 @@ if (dados.funcao === "administrador") {
 
 
 
-// function listarLivros () {
-//     let modelo = document.getElementById("modelo").cloneNode(true);
 
-    
-// }
 
-const url = "http://192.168.0.155:3000/livros/";
+const url = "http://localhost:3000/livros/";
 
 document.querySelector('#formLivro').addEventListener('submit', function(e){
     e.preventDefault();
