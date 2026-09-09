@@ -16,7 +16,7 @@ function cancelar(){
     modal.style.display = "none"
 }
 
-if (dados.funcao === "administrador") {
+if (dados.funcao === "ADM") {
     btCadastrar.style.display = "flex";
 }
 
@@ -45,7 +45,8 @@ document.querySelector('#formLivro').addEventListener('submit', function(e){
     fetch(url + 'cadastrar', {
     method: 'POST',
     headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Authorization' : 'Bearer ' + localStorage.getItem("token")
     },
     body: JSON.stringify(novoLivro)
     })
