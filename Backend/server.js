@@ -42,7 +42,8 @@ app.use("/", (req, res) => {
     res.status(200).json({ message: "API funcionando!" });
 });
 
+const PORT = process.env.PORT || 3000;
 
-app.listen(process.env.PORT_APP, () => {
-    console.log("Online na porta " + process.env.PORT_APP);
-})
+app.listen(PORT, () => {
+    console.log(`Online na porta ${PORT}`);
+});
